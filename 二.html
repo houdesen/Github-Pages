@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #search{
+            width: 200px;
+            height: 35px;
+        }
+        #sub{
+            width: 150px;
+            height: 32px;
+            color: #8f8e8e;
+        }
+        #history{
+            width: 360px;
+            line-height: 30px;
+            position: relative;
+        }
+        #clear{
+            width: 20px;
+            height: 25px;
+            text-align: center;
+            background-color:#e0e0e0;
+            color:#fff;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: none;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="GET">
+        <input type="text" placeholder="请输入想要查找的商品" id="search" autocomplete="off">
+        <input type="submit" value="搜索" id="sub">
+    </form>
+    <p>最近搜索</p>
+    <div id="history"><div id="clear">X</div></div>
+</body>
+<script>
+    var search = document.getElementById("search");
+    window.onload = function(){
+        read();
+    }
+
+    function save(id){
+        localStorage.setItem(search.value,search.value);
+        var data = localStorage.getItem(search.value);
+        var sp = document.createElement("span");
+        document.getElementById("history").appendChild(sp);
+        sp.innerHTML = data;
+        sp.style.backgroundColor = "#e0e0e0";
+        sp.style.marginRight = "10px";
+    }
+
+    function read(){
+        for(var i=0; i<localStorage.length; i++){
+			var key = localStorage.key(i);
+			var data = localStorage.getItem(key);
+            var sp = document.createElement("span");
+            document.getElementById("history").appendChild(sp);
+			sp.innerHTML += data;
+            sp.style.backgroundColor = "#e0e0e0";
+            sp.style.marginRight = "10px";
+		}
+    }
+
+    document.getElementById("sub").onclick = function(){
+        save(search);
+    }
+
+    document.getElementById("history").onmouseover = function(){
+        clear.style.display = "block";
+    }
+
+    document.getElementById("history").onmouseout = function(){
+        clear.style.display = "none";
+    }
+    
+    document.getElementById("clear").onclick = function(){
+        window.localStorage.clear();
+        alert("数据已被清除");
+    }
+</script>
+</html>
