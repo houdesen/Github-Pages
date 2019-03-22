@@ -49,8 +49,9 @@
     }
 
     function save(id){
-        localStorage.setItem(search.value,search.value);
-        var data = localStorage.getItem(search.value);
+        var time = new Date().getTime();
+        localStorage.setItem(time,search.value);
+        var data = localStorage.getItem(time);
         var sp = document.createElement("span");
         document.getElementById("history").appendChild(sp);
         sp.innerHTML = data;
