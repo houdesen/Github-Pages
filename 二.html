@@ -54,6 +54,7 @@
         var sp = document.createElement("span");
         document.getElementById("history").appendChild(sp);
         sp.innerHTML = data;
+        sp.className = "concent";
         sp.style.backgroundColor = "#e0e0e0";
         sp.style.marginRight = "10px";
     }
@@ -65,6 +66,7 @@
             var sp = document.createElement("span");
             document.getElementById("history").appendChild(sp);
 			sp.innerHTML += data;
+            sp.className = "concent";
             sp.style.backgroundColor = "#e0e0e0";
             sp.style.marginRight = "10px";
 		}
@@ -84,7 +86,12 @@
     
     document.getElementById("clear").onclick = function(){
         window.localStorage.clear();
-        alert("数据是否全部清除?");
+        alert("数据是否被全部清除？");
+        var concent = document.getElementsByClassName("concent");
+        for(var i = concent.length; i > 0; i--){
+            concent[i-1].parentNode.removeChild(concent[i-1]);
+        }
+        
     }
 </script>
 </html>
