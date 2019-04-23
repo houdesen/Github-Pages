@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮刮乐</title>
+    <style>
+        div {
+            width: 500px;
+            height: 200px;
+            user-select: none;
+            text-align: center;
+            padding-top: 20px;
+            font-size: 100px;
+            color: #ff0000;
+            position: relative;
+        }
+        canvas {
+            border: 1px solid rgb(236, 24, 24);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <canvas id="canvas" width="500" height="200"></canvas>
+</body>
+<script>
+    window.onload = function(){
+        var arr = ['一等奖','二等奖','三等奖','谢谢惠顾'];
+        var d =document.getElementsByTagName('div')[0];
+        var a = Math.floor(Math.random()*4);
+        d.innerHTML = arr[a];
+    }
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    var imgData = context.createImageData(500, 200);
+    for (var i = 0; i < imgData.data.length; i += 4) {
+        imgData.data[i] = 136;
+        imgData.data[i+1] = 131;
+        imgData.data[i+2] = 131;
+        imgData.data[i+3] = 255;
+    }
+    context.putImageData(imgData, 0, 0);
+    context.globalCompositeOperation = 'destination-out';
+    canvas.onclick = function(e){
+        var e = e || window.event;
+        context.beginPath();
+        context.arc(e.clientX-canvas.offsetLeft,e.clientY-canvas.offsetTop,30,0*Math.PI,2*Math.PI);
+        context.fill();
+        context.closePath();
+        e.preventDefault(); 
+        imgData = context.getImageData(0,0,500,200);
+        var k = 0;
+    
+        for (var index = 0; index < imgData.data.length; index += 4) {
+            if(imgData.data[index+3] == 0){
+                k = k+1;
+            }
+            if(k/(imgData.width*imgData.height)>0.7){
+                context.clearRect(0,0,500,200);
+                break;
+            }
+        }
+        
+    }
+    canvas.onmousedown = function(){
+        canvas.onmousemove = function(e){
+            var e = e || window.event;
+            context.beginPath();
+            context.arc(e.clientX-canvas.offsetLeft,e.clientY-canvas.offsetTop,30,0*Math.PI,2*Math.PI);
+            context.fill();
+            context.closePath();
+            e.preventDefault(); 
+            imgData = context.getImageData(0,0,500,200);
+            var k = 0;
+            for (var index = 0; index < imgData.data.length; index += 4) {
+                if(imgData.data[index+3] == 0){
+                    k = k+1;
+                }
+                if(k/(imgData.width*imgData.height)>0.7){
+                    context.clearRect(0,0,500,200);
+                    break;
+                }
+            }
+            
+        }
+    }
+    document.onmouseup = function(){
+        canvas.onmousemove = null;
+
+    }
+</script>
+</html>
