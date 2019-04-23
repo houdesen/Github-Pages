@@ -60,7 +60,7 @@
             if(imgData.data[index+3] == 0){
                 k = k+1;
             }
-            if(k/(imgData.width*imgData.height)>0.7){
+            if(k/(imgData.width*imgData.height)>0.85){
                 context.clearRect(0,0,500,200);
                 break;
             }
@@ -81,7 +81,7 @@
                 if(imgData.data[index+3] == 0){
                     k = k+1;
                 }
-                if(k/(imgData.width*imgData.height)>0.7){
+                if(k/(imgData.width*imgData.height)>0.85){
                     context.clearRect(0,0,500,200);
                     break;
                 }
