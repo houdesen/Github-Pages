@@ -47,29 +47,19 @@
     context.putImageData(imgData, 0, 0);
     context.globalCompositeOperation = 'destination-out';
     canvas.onclick = function(e){
-        var e = e || window.event;
-        context.beginPath();
-        context.arc(e.clientX-canvas.offsetLeft,e.clientY-canvas.offsetTop,30,0*Math.PI,2*Math.PI);
-        context.fill();
-        context.closePath();
-        e.preventDefault(); 
-        imgData = context.getImageData(0,0,500,200);
-        var k = 0;
-    
-        for (var index = 0; index < imgData.data.length; index += 4) {
-            if(imgData.data[index+3] == 0){
-                k = k+1;
-            }
-            if(k/(imgData.width*imgData.height)>0.7){
-                context.clearRect(0,0,500,200);
-                break;
-            }
-        }
-        
+        Scratch(e);
     }
     canvas.onmousedown = function(){
         canvas.onmousemove = function(e){
-            var e = e || window.event;
+            Scratch(e);
+        }
+    }
+    document.onmouseup = function(){
+        canvas.onmousemove = null;
+
+    }
+    function Scratch(e){
+        var e = e || window.event;
             context.beginPath();
             context.arc(e.clientX-canvas.offsetLeft,e.clientY-canvas.offsetTop,30,0*Math.PI,2*Math.PI);
             context.fill();
@@ -81,17 +71,12 @@
                 if(imgData.data[index+3] == 0){
                     k = k+1;
                 }
-                if(k/(imgData.width*imgData.height)>0.7){
+                if(k/(imgData.width*imgData.height)>0.85){
                     context.clearRect(0,0,500,200);
                     break;
                 }
             }
             
         }
-    }
-    document.onmouseup = function(){
-        canvas.onmousemove = null;
-
-    }
 </script>
 </html>
