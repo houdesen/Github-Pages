@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 350px;
+            margin-left: 300px;
+            border: 1px solid #d7d7d7;
+            box-shadow: 0px 0px 0px 2px rgb(212, 209, 209);
+            position: relative;
+        }
+        #circle{
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: #fc7449;
+            text-align: center;
+            font-size: 13px;
+            color: #fff;
+            font-weight: bolder; 
+            position: absolute;
+            right: 13px;
+            top: 17px;
+            z-index: 2;
+        }
+        #littleimg{
+            width: 40px;
+            height: 20px;
+            background: #fc7449;
+            text-align: center;
+            font-size: 13px;
+            color: #fff;
+            position: absolute;
+            left: 0px;
+            top: 180px;
+            z-index: 2;
+        }
+        #pic{
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        #pic img{
+            height: 100%;
+            width: 100%;       
+        }
+        #pic div{
+            width: 300px;
+            height: 200px;
+            background: #706e6e;
+            position: absolute;
+            top: 0;
+            opacity: 0;
+        }
+        #word{
+            width: 285px;
+            height: 150px;
+            padding-left: 15px;
+            background: #fff;
+            position: absolute;
+            top:200px;
+            z-index: 2;
+        }
+        #word h3{
+            margin-bottom: 12px;
+        }
+        #word #p1{
+            color: #fc7449;
+        }
+        #word #p2{
+            opacity: 0;
+            font-size: 14px;
+        }
+        #box #p3{
+            position: absolute;
+            bottom: 6px;
+            left: 15px;
+            font-size: 5px;
+            color:#beb8b8;
+            z-index: 2;
+        }
+        #word p{
+            margin: 0;
+        }
+        @keyframes mybox{
+            0%{
+                top:180px;
+            }
+            50%{
+                top: 90px;
+            }
+            100%{
+                top: 90px;
+            }
+        }
+        @keyframes mypic{
+            0%{
+                transform: scale(1);
+                width: 100%;
+                height: 100%;
+            }
+            50%{
+                transform: scale(1.2);
+                width: 100%;
+                height: 100%;
+            }
+            100%{
+                transform: scale(1.2);
+                width: 100%;
+                height: 100%;
+            }
+        }
+        @keyframes mypicdiv{
+            0%{
+                transform: scale(1.2);
+                opacity: 0;
+            }
+            50%{
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+            100%{
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+        }
+        @keyframes myword{
+            0%{
+                top:200px;
+            }
+            50%{
+                top:110px;
+            }
+            100%{
+                top:110px;
+            }
+        }
+        @keyframes myp2{
+            50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        #box:hover #littleimg{
+            animation-name: mybox;
+            animation-delay: 1s;
+            animation-duration: 1s;
+            animation-timing-function: linear; 
+            animation-direction:alternate;
+            animation-iteration-count: 2;
+        }
+        #box:hover #pic img{
+            animation-name: mypic;
+            animation-delay: 1s;
+            animation-duration: 1s;
+            animation-timing-function: linear; 
+            animation-direction:alternate;
+            animation-iteration-count: 2;
+        }
+        #box:hover #pic div{
+            animation-name: mypicdiv;
+            animation-delay: 1s;
+            animation-duration: 1s;
+            animation-timing-function: linear; 
+            animation-direction:alternate;
+            animation-iteration-count: 2;
+        }
+        #box:hover #word{
+            animation-name: myword;
+            animation-delay: 1s;
+            animation-duration: 1s;
+            animation-timing-function: linear; 
+            animation-direction:alternate;
+            animation-iteration-count: 2;
+        }
+        #box:hover #word #p2{
+            animation-name: myp2;
+            animation-delay: 1.4s;
+            animation-duration: 1.2s;
+            animation-timing-function: linear; 
+            animation-direction:alternate;
+            
+            /* transition-property: all;
+            transition-duration: 1s;
+            transition-delay: 1s;
+            transition-timing-function: linear; 
+            opacity: 1; */
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="circle"><span>15</span><br><span>五月</span></div>
+        <div id="littleimg">照片</div>
+        <div id="pic">
+            <img src="./img/zhanqiao.jpg" alt="">
+            <div></div>
+        </div>
+        <div id="word">
+            <h3>青岛栈桥</h3>
+            <p id="p1">国家AAAA级旅游景区</p>
+            <p id="p2">青岛栈桥是青岛海滨风景区的景点之一，是国务院于1982年首批公布的国家级风景名胜区。青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛。</p>
+        </div>
+        <p id="p3">10分钟前&nbsp&nbsp&nbsp&nbsp123评论</p>
+    </div>
+</body>
+</html>
