@@ -1,0 +1,260 @@
+ul>li{
+    list-style: none;
+}
+.top{
+    width: 100%;
+    height: 35px;
+    background-color: #000;
+    color: #fff;
+    padding-top: 4px;
+    display:flex;
+}
+#ksdz{
+    width: 163px;
+    height: 56px;
+    background: #f1490a;
+    color: #fff;
+    font-size: 26px;
+    display: none;
+    margin: 10px 0 0 400px;
+}
+.navbar-nav>li>a{
+    text-align: center;
+    color: #000;
+}
+.navbar-nav>li{
+    margin-left: 40px;
+}
+.active>a{
+    text-align: center;
+    border-bottom:2px solid #f38a12;
+}
+.navbar-nav>li>a{
+    text-align: center;
+    color: #000;
+}
+.navbar-nav>.active>a{
+    text-align: center;
+    color:#f38a12;
+}
+#ziti{
+    width: 580px;
+    height: 160px; 
+    position: absolute; 
+    top:50px;
+    left:150px
+}
+#ziti-2{
+    display: none;
+}
+#sousuo{
+    position: relative;
+    display: inline-block;
+    width: 580px;height: 50px;
+    background-color: #fff;
+    position: absolute;
+    left:520px;
+    top:425px;
+    border: 3px solid #000;
+    border-radius: 10px
+}
+#sousuo-1{
+    width: 160px;
+    height: 50px;
+    margin: -20px 0 0 0;
+    border-radius: 2px;
+    background-color: rgb(202, 191, 191);
+    float: left;
+}
+#sousuo-2{
+    width:240px;
+    height: 25px;
+    margin: -10px 0 0 30px;
+    border: none;
+    border-left: 1px solid rgb(155, 151, 151)
+}
+#sousuo-3{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 120px;
+    height: 50px;
+    border-radius: 2px;
+    background-color: #f38a12
+}
+#cljs1{
+    display: none;
+}
+#rmlx1{
+    display: none;
+}
+#rmlx4{
+    display: none;
+}
+#qztj2{
+    display: none;
+}
+#qztj4{
+    display: none;
+}
+
+#smyj2{
+    display: none;
+}
+#smyj4{
+    display: none
+}
+.last21{
+    padding-top:50px;
+    width: 1200px;
+    float: left;
+}
+.last211{
+    width: 75px;
+    height: 70px;
+    margin-right:20px;
+    float: left;
+}
+.last212{
+    width: 110px;
+    height:70px;
+    margin-right:20px;
+    float: left;
+}
+.last22{
+    padding-top:20px;
+    width: 1200px;
+    float: left;
+}
+.last21b{
+    width: 1100px;
+    height: 70px;
+    float: left;
+}
+.last221{
+    width: 75px;
+    height: 70px;
+    margin-right: 5px;
+    float: left;
+}
+.last222{
+    width: 1100px;
+    height:70px;
+    margin-right:20px;
+    font-size: 13px;
+    float: left;
+}
+.last222 li{
+    float: left;
+    padding-left: 10px;
+    color: white;
+}
+.last3{
+    height: 160px;
+    width: 100%;
+    background-color: black;
+    float: left;
+}
+.box4{
+    width: 1200px;
+    height: 160px;
+    margin: 0 auto;
+}
+@media screen and (max-width:750px){
+    .container{
+        width: 650px;
+    }
+    #denglu{
+        display: none;
+    }
+    #ksdz{
+        display: block;
+    }
+    #cljs{
+        display: none;
+    }
+    #ziti{
+        left:-35px
+    }
+    #ziti-1{
+        display: none;
+    }
+    #ziti-2{
+        font-size: 25px;
+        display: block;
+        margin-left: -90px;
+        margin-top: 20px
+    }
+    #sousuo{
+        position: absolute;
+        left:70px;
+        top:425px;
+        border: 3px solid #000;
+        border-radius: 10px
+    }
+    #sousuo-1{
+        height: 43px;
+        margin: -20px 0 0 0;
+    }
+    #sousuo-2{
+        margin: -20px 0 0 -100px;
+    }
+    #sousuo-3{
+        height: 44px;
+    }
+    #cljs1{
+        display: block;
+        margin: 20px 0 50px 0;
+    }
+    #rmlx2{
+        display: none;
+    }
+    #rmlx1{
+        display: block;
+        border-left: 2px solid #f1490a; 
+    }
+    #rmlx3{
+        display: none;
+    }
+    #rmlx4{
+        display: block;
+        margin: 0 0 50px 0;
+    }
+    #qztj1{
+        display: none;
+    }
+    #qztj2{
+        display: block;
+        border-left: 2px solid #f1490a; 
+    }
+    #qztj3{
+        display: none;
+    }
+    #qztj4{
+        display: block;
+        margin: 0 0 50px 0;
+    }
+    #qztj5{
+        display: none;
+    }
+    #pic{
+        display: none;
+    }
+    #smyj1{
+        display: none;
+    }
+    #smyj2{
+        display: block;
+        border-left: 2px solid #f1490a; 
+    }
+    #smyj3{
+        display: none;
+    }
+    #smyj4{
+        display: block;
+        margin: 0 0 50px 0;
+    }
+    #last,#last3{
+        display: none;
+    }
+}
