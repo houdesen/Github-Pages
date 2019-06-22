@@ -149,16 +149,8 @@ ul>li{
     padding-left: 10px;
     color: white;
 }
-.last3{
-    height: 160px;
-    width: 100%;
-    background-color: black;
-    float: left;
-}
-.box4{
-    width: 1200px;
-    height: 160px;
-    margin: 0 auto;
+#last4{
+    display: none
 }
 @media screen and (max-width:750px){
     .container{
@@ -256,5 +248,8 @@ ul>li{
     }
     #last,#last3{
         display: none;
+    }
+    #last4{
+        display: block
     }
 }
