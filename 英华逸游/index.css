@@ -155,6 +155,9 @@ ul>li{
     background-color: black;
     float: left;
 }
+#last4{
+    display:none
+}
 .box4{
     width: 1200px;
     height: 160px;
@@ -256,5 +259,8 @@ ul>li{
     }
     #last,#last3{
         display: none;
+    }
+    #last4{
+        display: block;
     }
 }
